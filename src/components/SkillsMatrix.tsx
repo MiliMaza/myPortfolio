@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { skillCategories } from '../data/skills';
-import { Layout, Server, Cpu, Database, Terminal, ArrowRight, Check } from 'lucide-react';
+import { Layout, Server, Cpu, Database, Terminal, ArrowRight } from 'lucide-react';
 import { playTactileSound } from '../utils/audio';
 
 interface SkillsMatrixProps {
@@ -42,7 +42,7 @@ export const SkillsMatrix = ({ soundEnabled, onFilterProjectsByTech }: SkillsMat
         <div className="flex items-center gap-2">
           <span className="w-2.5 h-2.5 rounded-full bg-[#38bdf8]" />
           <span className="text-xs font-mono uppercase tracking-widest text-[#38bdf8]">
-            Technical Capabilities
+            Technical Skills
           </span>
         </div>
 
@@ -51,8 +51,8 @@ export const SkillsMatrix = ({ soundEnabled, onFilterProjectsByTech }: SkillsMat
             <h2 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#f8fafc] tracking-tight">
               Categorized Stack
             </h2>
-            <p className="text-sm sm:text-base text-[#94a3b8] max-w-xl mt-2 leading-relaxed">
-              Organized by engineering domain. No artificial percentage bars — click any technology to inspect its applied role across my projects.
+            <p className="text-sm sm:text-base text-[#94a3b8] max-w-max mt-2 leading-relaxed">
+              Organized by engineering domain. Click any technology to inspect its applied role across my projects.
             </p>
           </div>
 
@@ -110,20 +110,18 @@ export const SkillsMatrix = ({ soundEnabled, onFilterProjectsByTech }: SkillsMat
                     <button
                       key={skill.name}
                       onClick={() => handleSkillClick(skill.name)}
-                      className={`px-2.5 py-1 rounded-lg text-xs font-mono transition-all text-left flex items-center gap-1.5 cursor-pointer ${
-                        isSelected
-                          ? 'bg-[#d4ff3a] text-[#090b10] font-semibold ring-2 ring-[#d4ff3a]/30'
-                          : skill.highlight
+                      className={`px-2.5 py-1 rounded-lg text-xs font-mono transition-all text-left flex items-center gap-1.5 cursor-pointer ${isSelected
+                        ? 'bg-[#d4ff3a] text-[#090b10] font-semibold ring-2 ring-[#d4ff3a]/30'
+                        : skill.highlight
                           ? 'bg-[#141720] hover:bg-[#1f2636] text-[#e2e8f0] border border-[#2c374d]'
                           : 'bg-[#0f121a] hover:bg-[#171c26] text-[#94a3b8] border border-[#1b2230]'
-                      }`}
+                        }`}
                     >
                       <span>{skill.name}</span>
                       {skill.projects.length > 0 && (
-                        <span 
-                          className={`text-[9px] px-1 py-0.2 rounded font-sans ${
-                            isSelected ? 'bg-[#090b10]/30 text-[#090b10]' : 'bg-[#1e2433] text-[#64748b]'
-                          }`}
+                        <span
+                          className={`text-[9px] px-1 py-0.2 rounded font-sans ${isSelected ? 'bg-[#090b10]/30 text-[#090b10]' : 'bg-[#1e2433] text-[#64748b]'
+                            }`}
                           title={`Used in ${skill.projects.length} project(s)`}
                         >
                           {skill.projects.length}
@@ -133,11 +131,6 @@ export const SkillsMatrix = ({ soundEnabled, onFilterProjectsByTech }: SkillsMat
                   );
                 })}
               </div>
-            </div>
-
-            <div className="pt-4 mt-4 border-t border-[#181d29] flex items-center justify-between text-[11px] font-mono text-[#64748b]">
-              <span>Applied in real codebases</span>
-              <Check className="w-3.5 h-3.5 text-emerald-500" />
             </div>
           </div>
         ))}

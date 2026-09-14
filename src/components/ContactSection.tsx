@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Copy, Check, ExternalLink, Github, Linkedin, ArrowUpRight, Globe, Clock } from 'lucide-react';
+import { Mail, Copy, Check, Github, Linkedin, ArrowUpRight, Globe } from 'lucide-react';
 import { playTactileSound } from '../utils/audio';
 
 interface ContactSectionProps {
@@ -8,8 +8,8 @@ interface ContactSectionProps {
 
 export const ContactSection = ({ soundEnabled }: ContactSectionProps) => {
   const [copied, setCopied] = useState(false);
-  const emailAddress = 'milagrosmazamm@gmail.com';
-  const linkedinUrl = 'https://linkedin.com/in/milagrosmaza';
+  const emailAddress = 'milagrosmaza.tech@gmail.com';
+  const linkedinUrl = 'https://linkedin.com/in/milagros-maza';
   const githubUrl = 'https://github.com/milimaza';
 
   const copyEmail = () => {
@@ -22,7 +22,7 @@ export const ContactSection = ({ soundEnabled }: ContactSectionProps) => {
   return (
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 relative max-w-4xl mx-auto text-left">
       <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#0e121a] to-[#090b10] border border-[#222a3b] shadow-2xl relative overflow-hidden">
-        
+
         {/* Subtle decorative glow */}
         <div className="absolute top-0 right-0 w-80 h-80 bg-[#d4ff3a]/[0.03] rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#ff6036]/[0.03] rounded-full blur-3xl pointer-events-none" />
@@ -40,7 +40,7 @@ export const ContactSection = ({ soundEnabled }: ContactSectionProps) => {
               Start a conversation.
             </h2>
             <p className="text-base sm:text-lg text-[#94a3b8] leading-relaxed max-w-xl font-sans">
-              Currently considering full-stack engineering roles, high-velocity technical teams, and selective product collaborations. No bloated forms — reach out directly.
+              Currently considering full-stack engineering roles, data & AI roles, and any other related role. No forms needed - reach out directly.
             </p>
           </div>
 
@@ -51,7 +51,7 @@ export const ContactSection = ({ soundEnabled }: ContactSectionProps) => {
                 <Mail className="w-5 h-5" />
               </div>
               <div className="truncate">
-                <span className="text-[11px] font-mono text-[#64748b] block uppercase">Direct Inbox</span>
+                <span className="text-[11px] font-mono text-[#64748b] block uppercase">Email</span>
                 <span className="text-sm sm:text-base font-mono font-medium text-[#f1f5f9] truncate block">
                   {emailAddress}
                 </span>
@@ -69,7 +69,7 @@ export const ContactSection = ({ soundEnabled }: ContactSectionProps) => {
               </button>
 
               <a
-                href={`mailto:${emailAddress}?subject=Engineering%20Inquiry%20from%20mili.dev`}
+                href={`mailto:${emailAddress}?subject=Job%20Offer%20via%20mili.dev`}
                 className="px-4 py-2.5 rounded-xl bg-[#d4ff3a] hover:bg-[#c2ed2e] text-[#090b10] font-semibold text-xs transition-all flex items-center gap-1.5 shadow-md"
               >
                 <span>Compose</span>
@@ -106,7 +106,7 @@ export const ContactSection = ({ soundEnabled }: ContactSectionProps) => {
 
             <div className="flex items-center gap-2 text-[#64748b]">
               <Globe className="w-3.5 h-3.5 text-[#d4ff3a]" />
-              <span>Available for Remote / Hybrid teams worldwide</span>
+              <span>Based in Italy. Available for Remote</span>
             </div>
           </div>
 

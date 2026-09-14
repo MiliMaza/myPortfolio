@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Project } from '../types';
-import { X, ExternalLink, Github, CheckCircle2, ArrowRight, Shield, Cpu, Sparkles, Terminal, ChevronRight, ChevronLeft } from 'lucide-react';
+import { X, ExternalLink, Github, CheckCircle2, Cpu, Sparkles, Terminal, ChevronRight, ChevronLeft } from 'lucide-react';
 import { playTactileSound } from '../utils/audio';
 
 interface ProjectDetailModalProps {
@@ -36,22 +36,22 @@ export const ProjectDetailModal = ({
   const nextProject = allProjects[(currentIndex + 1) % allProjects.length];
 
   return (
-    <div 
+    <div
       className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 lg:p-10 bg-[#06080c]/85 backdrop-blur-md overflow-y-auto animate-fadeIn"
       role="dialog"
       aria-modal="true"
       aria-labelledby="project-modal-title"
     >
-      <div 
+      <div
         className="relative w-full max-w-4xl max-h-[92vh] rounded-2xl bg-[#0c0f16] border border-[#252b3d] shadow-2xl flex flex-col overflow-hidden text-left"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Top Sticky Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-[#1a1f2c] bg-[#11141c]/90 backdrop-blur-md z-10">
           <div className="flex items-center gap-3">
-            <span 
-              className="w-3 h-3 rounded-full" 
-              style={{ backgroundColor: project.accentColor }} 
+            <span
+              className="w-3 h-3 rounded-full"
+              style={{ backgroundColor: project.accentColor }}
             />
             <span className="text-xs font-mono uppercase tracking-wider text-[#94a3b8]">
               {project.category} · {project.year}
@@ -100,7 +100,7 @@ export const ProjectDetailModal = ({
 
         {/* Modal Scrollable Body */}
         <div className="p-6 sm:p-8 overflow-y-auto space-y-8 text-[#cbd5e1] font-sans">
-          
+
           {/* Header Title & Tagline */}
           <div className="space-y-3">
             <h2 id="project-modal-title" className="font-display font-extrabold text-3xl sm:text-4xl text-[#f8fafc] tracking-tight">
@@ -160,7 +160,7 @@ export const ProjectDetailModal = ({
 
           {/* Tech Stack Chips */}
           <div className="space-y-2">
-            <h4 className="text-xs font-mono uppercase text-[#64748b] tracking-wider">Technologies & Toolchain</h4>
+            <h4 className="text-xs font-mono uppercase text-[#64748b] tracking-wider">Tech Stack</h4>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
                 <span
@@ -186,7 +186,7 @@ export const ProjectDetailModal = ({
 
             <div className="p-5 rounded-xl bg-[#10131b] border border-[#1e2433] space-y-2">
               <span className="text-xs font-mono text-[#d4ff3a] uppercase tracking-wider block font-semibold">
-                The Engineered Solution
+                The Solution
               </span>
               <p className="text-sm leading-relaxed text-[#94a3b8]">
                 {project.solution}
@@ -199,7 +199,7 @@ export const ProjectDetailModal = ({
             <div className="space-y-3">
               <h4 className="text-sm font-display font-bold text-[#f8fafc] flex items-center gap-2">
                 <Terminal className="w-4 h-4 text-[#d4ff3a]" />
-                Architectural Topology
+                Architectural Overview
               </h4>
               <div className="p-4 rounded-xl bg-[#090b10] border border-[#1e2433] space-y-2 font-mono text-xs text-[#cbd5e1]">
                 {project.architecture.map((step, idx) => (
@@ -216,7 +216,7 @@ export const ProjectDetailModal = ({
           <div className="space-y-4">
             <h4 className="text-sm font-display font-bold text-[#f8fafc] flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-[#d4ff3a]" />
-              Core Capabilities & Features
+              Key Features
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {project.features.map((feat, idx) => (
@@ -238,7 +238,7 @@ export const ProjectDetailModal = ({
             <div className="space-y-3">
               <h4 className="text-sm font-display font-bold text-[#f8fafc] flex items-center gap-2">
                 <Cpu className="w-4 h-4 text-[#38bdf8]" />
-                Technical Decisions & Rationale
+                Technical Decisions
               </h4>
               <div className="space-y-2.5">
                 {project.technicalDecisions.map((dec, idx) => (
@@ -257,12 +257,12 @@ export const ProjectDetailModal = ({
           )}
 
           {/* Challenges & Learnings */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="p-4 rounded-xl bg-[#10131b] border border-[#1e2433] space-y-2">
               <span className="text-xs font-mono text-[#cbd5e1] uppercase font-semibold">
-                Key Engineering Challenges
+                Challenges
               </span>
-              <ul className="space-y-1.5 text-xs text-[#94a3b8]">
+              <ul className="space-y-1.5 text-xs text-[#94a3b8] mt-2">
                 {project.challenges.map((c, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <span className="text-[#ff6036] font-bold">•</span>
@@ -274,9 +274,9 @@ export const ProjectDetailModal = ({
 
             <div className="p-4 rounded-xl bg-[#10131b] border border-[#1e2433] space-y-2">
               <span className="text-xs font-mono text-[#cbd5e1] uppercase font-semibold">
-                What Was Learned
+                Learnings
               </span>
-              <ul className="space-y-1.5 text-xs text-[#94a3b8]">
+              <ul className="space-y-1.5 text-xs text-[#94a3b8] mt-2">
                 {project.learnings.map((l, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <span className="text-[#d4ff3a] font-bold">•</span>

@@ -30,7 +30,7 @@ export const ProjectCard = ({
   const handleInteractiveAction = (e: MouseEvent) => {
     e.stopPropagation();
     playTactileSound('node', soundEnabled);
-    
+
     if (project.id === 'aska-flow') {
       setInteractiveRunState('compiling');
       setTimeout(() => {
@@ -38,7 +38,7 @@ export const ProjectCard = ({
         playTactileSound('success', soundEnabled);
         setTimeout(() => setInteractiveRunState('idle'), 2500);
       }, 700);
-    } else if (project.id === 'med-vault') {
+    } else if (project.id === 'health-vault') {
       setPhiDecrypted(!phiDecrypted);
     }
   };
@@ -49,25 +49,24 @@ export const ProjectCard = ({
       style={{
         borderTopColor: project.accentColor,
       }}
-      className={`group relative rounded-2xl bg-[#0d1017] border border-[#1e2433] hover:border-[#334155] transition-all duration-300 overflow-hidden cursor-pointer flex flex-col justify-between ${
-        featuredLayout === 'large'
-          ? 'lg:col-span-12 p-6 sm:p-8'
-          : featuredLayout === 'split-left' || featuredLayout === 'split-right'
+      className={`group relative rounded-2xl bg-[#0d1017] border border-[#1e2433] hover:border-[#334155] transition-all duration-300 overflow-hidden cursor-pointer flex flex-col justify-between ${featuredLayout === 'large'
+        ? 'lg:col-span-12 p-6 sm:p-8'
+        : featuredLayout === 'split-left' || featuredLayout === 'split-right'
           ? 'lg:col-span-6 p-6 sm:p-7'
           : 'lg:col-span-6 p-5 sm:p-6'
-      }`}
+        }`}
     >
       {/* Subtle top indicator border */}
-      <div 
-        className="absolute top-0 left-0 right-0 h-[2px] transition-all duration-300 group-hover:h-[3px]" 
-        style={{ backgroundColor: project.accentColor }} 
+      <div
+        className="absolute top-0 left-0 right-0 h-[2px] transition-all duration-300 group-hover:h-[3px]"
+        style={{ backgroundColor: project.accentColor }}
       />
 
       {/* Top Metadata Row */}
       <div className="space-y-4">
         <div className="flex items-center justify-between gap-3 flex-wrap">
           <div className="flex items-center gap-2">
-            <span 
+            <span
               className="text-xs font-mono font-medium px-2.5 py-1 rounded-md bg-[#141720] border border-[#252b3d]"
               style={{ color: project.accentColor }}
             >
@@ -103,8 +102,8 @@ export const ProjectCard = ({
         </div>
 
         {/* Project Specific Interactive Exhibition Canvas / Widget */}
-        <div 
-          onClick={(e) => e.stopPropagation()} 
+        <div
+          onClick={(e) => e.stopPropagation()}
           className="mt-4 rounded-xl bg-[#080a0f] border border-[#1a1f2c] p-4 text-xs font-mono overflow-hidden"
         >
           {/* ASKA FLOW Interactive Micro-Builder */}
@@ -132,16 +131,15 @@ export const ProjectCard = ({
                   <div className="text-[#cbd5e1] font-semibold text-xs mt-0.5">Stripe Webhook</div>
                   <div className="text-[9px] text-[#94a3b8]">charge.refunded</div>
                 </div>
-                
+
                 <div className="text-center relative">
                   <span className="hidden sm:inline-block text-[#64748b]">→</span>
-                  <div className={`p-2 rounded-lg border transition-all ${
-                    interactiveRunState === 'compiling'
-                      ? 'bg-[#d4ff3a]/10 border-[#d4ff3a] text-[#d4ff3a] animate-pulse'
-                      : interactiveRunState === 'success'
+                  <div className={`p-2 rounded-lg border transition-all ${interactiveRunState === 'compiling'
+                    ? 'bg-[#d4ff3a]/10 border-[#d4ff3a] text-[#d4ff3a] animate-pulse'
+                    : interactiveRunState === 'success'
                       ? 'bg-emerald-950/40 border-emerald-500 text-emerald-400'
                       : 'bg-[#121620] border-[#1f2738] text-[#cbd5e1]'
-                  }`}>
+                    }`}>
                     <div className="text-[10px] text-[#64748b]">LLM Logic Engine</div>
                     <div className="font-semibold text-xs mt-0.5">Zod Schema DAG</div>
                   </div>
@@ -222,7 +220,7 @@ export const ProjectCard = ({
           )}
 
           {/* MED VAULT Interactive Security & Audit Widget */}
-          {project.id === 'med-vault' && (
+          {project.id === 'health-vault' && (
             <div className="space-y-3">
               <div className="flex items-center justify-between text-[11px] text-[#94a3b8] pb-1 border-b border-[#1a1f2c]">
                 <span className="flex items-center gap-1.5 text-[#38bdf8]">

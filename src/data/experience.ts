@@ -2,9 +2,9 @@ import { TimelineItem, EducationItem } from '../types';
 
 export const educationData: EducationItem[] = [
   {
-    degree: 'Licenciada en Informática',
+    degree: 'Computer Science',
     institution: 'Universidad Siglo 21',
-    status: 'Degree Conferred',
+    status: 'Bachelor Degree',
     focus: 'Advanced Software Engineering, Distributed Systems, Data Structures & Algorithm Design, Database Architectures, Information Security.',
     skillsAcquired: [
       'Relational Database Modeling',
@@ -15,9 +15,9 @@ export const educationData: EducationItem[] = [
     ]
   },
   {
-    degree: 'Analista de Sistemas',
+    degree: 'Systems Analyst',
     institution: 'Universidad Siglo 21',
-    status: 'Intermediate Degree Conferred',
+    status: 'Associate Degree',
     focus: 'Requirements Engineering, Systems Analysis, Workflow Modeling, Business Process Automation, Software Quality Assurance.',
     skillsAcquired: [
       'Business Process Flowcharting',
@@ -30,68 +30,68 @@ export const educationData: EducationItem[] = [
 
 export const experienceTimeline: TimelineItem[] = [
   {
-    id: 'exp-fullstack',
-    period: '2023 — Present',
-    title: 'Full-Stack Software Developer & AI Systems Builder',
-    roleOrField: 'Software Engineering',
-    organization: 'Independent & Project Work',
-    location: 'Remote',
-    type: 'engineering',
-    highlights: [
-      'Architected ASKA FLOW, a conversational engine translating user prompts into executable n8n automation DAGs, cutting workflow drafting time by 75%.',
-      'Engineered Med Vault, a HIPAA/PHI-conscious clinical records application utilizing PostgreSQL row-level security and strict cryptographic role boundaries.',
-      'Constructed custom full-stack solutions integrating React, Next.js, Supabase, Turso (libSQL), and the Vercel AI SDK.',
-      'Active focus on high-reliability automation, prompt engineering workflows, and high-performance frontend interfaces.'
-    ],
-    takeaways: 'Direct translation of complex operational logic into clean, declarative code and user-first interfaces.'
-  },
-  {
     id: 'exp-athletics',
-    period: 'Multi-Year Career',
-    title: 'Professional Basketball Athlete (Point Guard / Playmaker)',
-    roleOrField: 'Professional Competition',
-    organization: 'National & Regional Leagues',
-    location: 'Argentina / International',
+    period: '2021 - Present',
+    title: 'Professional Basketball Athlete',
+    roleOrField: 'Competitive Sports',
+    organization: 'National & International Leagues',
+    location: 'Argentina / Spain / Portugal / Italy',
     type: 'athletics',
     highlights: [
-      'Competed at the highest national level as a tactical floor general (Point Guard), managing game pace, reading opponent defensive schemes, and orchestrating offensive execution in real time.',
-      'Balanced rigorous daily double-shift physical conditioning and international travel with intensive computer science coursework and software development.',
-      'Cultivated elite composure under intense pressure (24-second shot clocks, hostile away environments, clutch final possessions).',
-      'Developed deep instincts for non-verbal team communication, constructive accountability, and selfless collaboration.'
+      'Competed at the highest national level as a Point Guard, managing game pace and orchestrating offensive execution in real time.',
+      'Balanced rigorous daily double-shift physical conditioning with studies.',
+      'Cultivated composure under intense pressure.',
+      'Developed instincts for team communication, accountability, and collaboration.'
     ],
-    takeaways: 'Athletic discipline provided an unfair advantage in engineering: absolute grit, rapid error recovery, high stamina for complex problem solving, and zero fear of high-stakes delivery.'
+    takeaways: 'Athletic discipline provides an advantage in programming with rapid error recovery and no fear of high-stakes delivery.'
   },
   {
     id: 'exp-cs-analyst',
-    period: 'Academic Foundation',
-    title: 'Computer Science & Systems Analysis Specialist',
-    roleOrField: 'Academic & Applied R&D',
+    period: '2021 — 2026',
+    title: 'Computer Science & Systems Analysis',
+    roleOrField: 'Academic Studies',
     organization: 'Universidad Siglo 21',
-    location: 'Argentina',
+    location: 'Argentina (Online)',
     type: 'education',
     highlights: [
-      'Earned dual technical credentials: Licenciada en Informática and Analista de Sistemas.',
-      'Researched optimization of relational database access patterns and software testing methodologies.',
-      'Designed end-to-end information system blueprints for real-world enterprise use cases.'
+      'Studied 3 years and obtained an Associate Degree in Systems Analysis',
+      'Continue with +2 more years to earned a Bachelor Degree in Computer Science',
+      'Worked on my Tesis with LLMs, automation and workflow building, and finished with a 9.60 GPA'
     ],
-    takeaways: 'Built a deep theoretical foundation that prevents common software traps and enables rapid adoption of cutting-edge technologies.'
+    takeaways: 'Built a deep theoretical foundation on algorithms, data structures, operating systems, databases, and software engineering.'
+  },
+  {
+    id: 'exp-fullstack',
+    period: '2025 — Present',
+    title: 'Full-Stack Software Developer & AI Systems Builder',
+    roleOrField: 'Software Engineering',
+    organization: 'Internship & Personal Projects',
+    location: 'Remote',
+    type: 'engineering',
+    highlights: [
+      'Worked as an intern at SKRB (Córdoba, Argentina) in a SCRUM team where I contributed to the development of some internal projects',
+      'Builded ASKA FLOW, a conversational engine translating user prompts into executable n8n automation workflows',
+      'Developed other full-stack solutions integrating React, Next.js, various databases, LLMs and other tools',
+      'Used to work in a collaborative environment using Agile methodologies such as SCRUM'
+    ],
+    takeaways: 'Ability to think and provide solutions to complex problems with clean, maintainable and user-first interfaces'
   }
 ];
 
 export const dualPerspectivePrinciples = [
   {
-    athleticPrinciple: 'Court Vision & Spatial Awareness',
-    engineeringTranslation: 'Macro Architecture & System Topology',
+    athleticPrinciple: 'Court Vision & Awareness',
+    engineeringTranslation: 'System Architecture & Topology',
     description: 'A point guard sees the entire floor two passes ahead. In software, this translates into anticipating bottlenecks, decoupling components cleanly, and designing predictable data flows.'
   },
   {
     athleticPrinciple: 'The 24-Second Shot Clock',
-    engineeringTranslation: 'Rapid Execution & High-Stakes Composure',
+    engineeringTranslation: 'Rapid Execution & Composure',
     description: 'When the game is on the line with seconds remaining, panic is fatal. High-pressure sports taught me how to triage, communicate clearly, and execute precisely during critical production moments.'
   },
   {
-    athleticPrinciple: 'Daily Film Study & Incremental Gains',
+    athleticPrinciple: 'Daily Learning & Incremental Gains',
     engineeringTranslation: 'Code Reviews, Profiling & Refactoring',
-    description: 'Unforgiving video review of yesterday’s mistakes is standard practice for elite athletes. I approach software the same way: measuring performance metrics, welcoming code critiques, and refining iteratively.'
+    description: 'Video review of yesterday’s mistakes is an standard practice for elite athletes. I approach software the same way: measuring performance metrics, welcoming code critiques, and refining iteratively.'
   }
 ];

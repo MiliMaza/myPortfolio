@@ -1,5 +1,5 @@
 import { experienceTimeline, educationData } from '../data/experience';
-import { Briefcase, GraduationCap, Trophy, Terminal, Calendar, MapPin, Award, CheckCircle2 } from 'lucide-react';
+import { GraduationCap, MapPin, CheckCircle2 } from 'lucide-react';
 import { playTactileSound } from '../utils/audio';
 
 interface ExperienceEducationProps {
@@ -9,21 +9,22 @@ interface ExperienceEducationProps {
 export const ExperienceEducation = ({ soundEnabled }: ExperienceEducationProps) => {
   return (
     <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 relative max-w-6xl mx-auto text-left">
-      
+
       {/* EXPERIENCE SECTION */}
       <div className="space-y-4 mb-12">
         <div className="flex items-center gap-2">
           <span className="w-2.5 h-2.5 rounded-full bg-[#10b981]" />
           <span className="text-xs font-mono uppercase tracking-widest text-[#10b981]">
-            Dual-Track Journey
+            Complete Journey
           </span>
         </div>
 
         <h2 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#f8fafc] tracking-tight">
-          Experience & Tactical Path
+          Experience Path
         </h2>
-        <p className="text-sm sm:text-base text-[#94a3b8] max-w-xl leading-relaxed">
-          Concurrent high-performance athletics and systems engineering. Where high-stakes competitive execution directly sharpens software delivery.
+        <p className="text-sm sm:text-base text-[#94a3b8] max-w-full leading-relaxed">
+          "Everybody in the world should learn how to program a computer, because it teaches you how to think"
+          <span className="text-xs font-mono text-[#94a3b8]"> - Steve Jobs</span>
         </p>
       </div>
 
@@ -34,36 +35,34 @@ export const ExperienceEducation = ({ soundEnabled }: ExperienceEducationProps) 
           const isEngineering = item.type === 'engineering';
 
           return (
-            <div 
+            <div
               key={item.id}
               onMouseEnter={() => playTactileSound('tick', soundEnabled)}
               className="relative group space-y-3"
             >
               {/* Timeline Pin/Dot */}
-              <div 
-                className={`absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full border-2 transition-transform group-hover:scale-125 ${
-                  isEngineering
-                    ? 'bg-[#090b10] border-[#d4ff3a]'
-                    : isAthletic
+              <div
+                className={`absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full border-2 transition-transform group-hover:scale-125 ${isEngineering
+                  ? 'bg-[#090b10] border-[#d4ff3a]'
+                  : isAthletic
                     ? 'bg-[#090b10] border-[#ff6036]'
                     : 'bg-[#090b10] border-[#38bdf8]'
-                }`}
+                  }`}
               />
 
               <div className="p-6 rounded-2xl bg-[#0e1117] border border-[#1e2433] hover:border-[#2b3547] transition-all space-y-4">
-                
+
                 {/* Header Metadata */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#181d29] pb-3">
                   <div>
                     <div className="flex items-center gap-2">
-                      <span 
-                        className={`text-xs font-mono px-2 py-0.5 rounded ${
-                          isEngineering 
-                            ? 'bg-[#d4ff3a]/10 text-[#d4ff3a]' 
-                            : isAthletic
+                      <span
+                        className={`text-xs font-mono px-2 py-0.5 rounded ${isEngineering
+                          ? 'bg-[#d4ff3a]/10 text-[#d4ff3a]'
+                          : isAthletic
                             ? 'bg-[#ff6036]/10 text-[#ff6036]'
                             : 'bg-[#38bdf8]/10 text-[#38bdf8]'
-                        }`}
+                          }`}
                       >
                         {item.roleOrField}
                       </span>
@@ -118,11 +117,8 @@ export const ExperienceEducation = ({ soundEnabled }: ExperienceEducationProps) 
         </div>
 
         <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-[#f8fafc] tracking-tight">
-          Formal Computer Science Degrees
+          University Degrees
         </h2>
-        <p className="text-sm sm:text-base text-[#94a3b8] max-w-xl leading-relaxed">
-          Rigorous university training establishing deep fundamentals in systems architecture, algorithms, and process analysis.
-        </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -157,7 +153,7 @@ export const ExperienceEducation = ({ soundEnabled }: ExperienceEducationProps) 
             </div>
 
             <div className="pt-4 border-t border-[#181d29] space-y-2">
-              <span className="text-[11px] font-mono uppercase text-[#64748b] block">Core Curricular Competencies:</span>
+              <span className="text-[11px] font-mono uppercase text-[#64748b] block">Core Competencies:</span>
               <div className="flex flex-wrap gap-1.5">
                 {edu.skillsAcquired.map((skill, sIdx) => (
                   <span
