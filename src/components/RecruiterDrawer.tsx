@@ -29,7 +29,7 @@ export const RecruiterDrawer = ({
 
   if (!isOpen) return null;
 
-  const emailAddress = 'milagrosmazamm@gmail.com';
+  const emailAddress = 'milagrosmaza.tech@gmail.com';
   const linkedinUrl = 'https://linkedin.com/in/milagros-maza';
   const githubUrl = 'https://github.com/MiliMaza';
 
