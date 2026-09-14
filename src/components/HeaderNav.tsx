@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { BrandMark } from './BrandMark';
 import { Volume2, VolumeX, Briefcase, Command, Menu, X } from 'lucide-react';
 import { playTactileSound } from '../utils/audio';
+import { projectsData } from '../data/projects';
 
 interface HeaderNavProps {
   soundEnabled: boolean;
@@ -30,7 +31,7 @@ export const HeaderNav = ({
   }, []);
 
   const navLinks = [
-    { id: 'projects', label: 'Projects', count: '3' },
+    { id: 'projects', label: 'Projects', count: projectsData.length.toString() },
     { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
     { id: 'experience', label: 'Path' },
@@ -55,13 +56,12 @@ export const HeaderNav = ({
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40 px-4 sm:px-6 lg:px-8 pt-4 transition-all duration-300">
-      <nav 
+      <nav
         aria-label="Main Navigation"
-        className={`max-w-6xl mx-auto rounded-2xl transition-all duration-300 ${
-          scrolled 
-            ? 'bg-[#0e1117]/85 backdrop-blur-md border border-[#252b3d] shadow-2xl py-2.5 px-4 sm:px-5' 
-            : 'bg-[#0e1117]/40 backdrop-blur-sm border border-[#1a1f2c] py-3.5 px-4 sm:px-6'
-        }`}
+        className={`max-w-6xl mx-auto rounded-2xl transition-all duration-300 ${scrolled
+          ? 'bg-[#0e1117]/85 backdrop-blur-sm border border-[#252b3d] shadow-2xl py-2.5 px-4 sm:px-5'
+          : 'bg-[#0e1117]/40 backdrop-blur-xl border border-[#1a1f2c] py-3.5 px-4 sm:px-6'
+          }`}
       >
         <div className="flex items-center justify-between">
           {/* Logo and Identity */}
@@ -94,18 +94,16 @@ export const HeaderNav = ({
                 <button
                   key={link.id}
                   onClick={() => handleNavClick(link.id)}
-                  className={`relative px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 ${
-                    isActive
-                      ? 'text-[#090b10] bg-[#d4ff3a] shadow-sm font-semibold'
-                      : 'text-[#94a3b8] hover:text-[#f8fafc] hover:bg-[#1a1f2c]'
-                  }`}
+                  className={`relative px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 ${isActive
+                    ? 'text-[#090b10] bg-[#d4ff3a] shadow-sm font-semibold'
+                    : 'text-[#94a3b8] hover:text-[#f8fafc] hover:bg-[#1a1f2c]'
+                    }`}
                 >
                   {link.label}
                   {link.count && (
-                    <span 
-                      className={`text-[10px] px-1 py-0.2 rounded font-mono ${
-                        isActive ? 'bg-[#090b10]/20 text-[#090b10]' : 'bg-[#252b3d] text-[#cbd5e1]'
-                      }`}
+                    <span
+                      className={`text-[10px] px-1 py-0.2 rounded font-mono ${isActive ? 'bg-[#090b10]/20 text-[#090b10]' : 'bg-[#252b3d] text-[#cbd5e1]'
+                        }`}
                     >
                       {link.count}
                     </span>
@@ -124,10 +122,10 @@ export const HeaderNav = ({
                 onOpenCommandPalette();
               }}
               className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#141720] hover:bg-[#1a1f2c] border border-[#252b3d] text-xs font-mono text-[#94a3b8] hover:text-[#e2e8f0] transition-colors"
-              title="Open Command Palette (Cmd + K)"
+              title="Open Command Palette (Cmd + K / Ctrl + K)"
             >
-              <Command className="w-3.5 h-3.5 text-[#94a3b8]" />
-              <span className="text-[11px]">⌘K</span>
+              <Command className="w-3 h-3 text-[#94a3b8]" />
+              <span className="text-[11px]">K</span>
             </button>
 
             {/* Recruiter Quick Sheet CTA */}
@@ -180,11 +178,10 @@ export const HeaderNav = ({
               <button
                 key={link.id}
                 onClick={() => handleNavClick(link.id)}
-                className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium flex items-center justify-between ${
-                  activeSection === link.id
-                    ? 'bg-[#d4ff3a] text-[#090b10] font-semibold'
-                    : 'text-[#94a3b8] hover:text-white hover:bg-[#141720]'
-                }`}
+                className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium flex items-center justify-between ${activeSection === link.id
+                  ? 'bg-[#d4ff3a] text-[#090b10] font-semibold'
+                  : 'text-[#94a3b8] hover:text-white hover:bg-[#141720]'
+                  }`}
               >
                 <span>{link.label}</span>
                 {link.count && (
@@ -203,7 +200,7 @@ export const HeaderNav = ({
                 className="w-full py-2.5 px-4 rounded-lg bg-[#141720] border border-[#d4ff3a]/40 text-[#d4ff3a] text-sm font-medium flex items-center justify-center gap-2"
               >
                 <Briefcase className="w-4 h-4" />
-                Open Recruiter 30-Sec Summary
+                Open Recruiter Summary
               </button>
             </div>
           </div>

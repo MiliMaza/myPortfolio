@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { X, Check, Copy, ExternalLink, Mail, Github, Linkedin, Briefcase, GraduationCap, Sparkles, Terminal } from 'lucide-react';
+import { X, Check, Copy, ExternalLink, Mail, Github, Linkedin, Briefcase } from 'lucide-react';
 import { playTactileSound } from '../utils/audio';
 
 interface RecruiterDrawerProps {
@@ -30,8 +30,8 @@ export const RecruiterDrawer = ({
   if (!isOpen) return null;
 
   const emailAddress = 'milagrosmazamm@gmail.com';
-  const linkedinUrl = 'https://linkedin.com/in/milagrosmaza';
-  const githubUrl = 'https://github.com/milimaza';
+  const linkedinUrl = 'https://linkedin.com/in/milagros-maza';
+  const githubUrl = 'https://github.com/MiliMaza';
 
   const copyEmailToClipboard = () => {
     playTactileSound('success', soundEnabled);
@@ -41,13 +41,13 @@ export const RecruiterDrawer = ({
   };
 
   return (
-    <div 
+    <div
       className="fixed inset-0 z-50 flex justify-end bg-[#05070a]/80 backdrop-blur-sm animate-fadeIn"
       role="dialog"
       aria-modal="true"
       aria-labelledby="recruiter-drawer-title"
     >
-      <div 
+      <div
         className="w-full max-w-2xl h-full bg-[#0c0f16] border-l border-[#252b3d] shadow-2xl flex flex-col justify-between overflow-y-auto text-left"
         onClick={(e) => e.stopPropagation()}
       >
@@ -62,7 +62,7 @@ export const RecruiterDrawer = ({
                 Recruiter 30-Second Fast Track
               </h2>
               <p className="text-xs font-mono text-[#94a3b8]">
-                High-signal summary answering the 7 core hiring questions
+                Summary answering key hiring questions
               </p>
             </div>
           </div>
@@ -81,16 +81,16 @@ export const RecruiterDrawer = ({
 
         {/* Drawer Body */}
         <div className="p-6 sm:p-8 space-y-8 text-sm text-[#cbd5e1] overflow-y-auto">
-          
+
           {/* Status & Availability */}
           <div className="p-4 rounded-xl bg-[#121622] border border-[#d4ff3a]/30 flex items-center justify-between gap-4">
             <div className="space-y-1">
-              <span className="text-[11px] font-mono text-[#d4ff3a] uppercase font-semibold flex items-center gap-1.5">
+              <span className="text-[11px] font-mono text-[#d4ff3a] uppercase font-semibold flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#d4ff3a] animate-ping" />
                 Active Job Search Status
               </span>
               <div className="text-xs text-[#f1f5f9]">
-                Open to Full-Stack Developer roles (Remote / Hybrid), high-velocity startups, and technical product teams.
+                Open to Full-Stack Developer roles (REMOTE), AI-focused roles, or similar.
               </div>
             </div>
             <button
@@ -109,49 +109,49 @@ export const RecruiterDrawer = ({
               Mili (Milagros Maza) — Full-Stack Developer & Computer Science Graduate
             </div>
             <p className="text-xs sm:text-sm text-[#94a3b8] leading-relaxed">
-              Educated in Argentina (Licenciada en Informática) with years of concurrent professional basketball experience as a point guard. Blends disciplined athletic work ethic, composure under tight deadlines, and systems analysis to build clean digital products.
+              Educated in Argentina (Universidad Siglo 21) with years of concurrent professional basketball experience. Blends disciplined athletic work ethic, composure under tight deadlines, and systems analysis to build clean digital products.
             </p>
           </div>
 
           {/* 2. What I Can Build & Core Specialties */}
           <div className="space-y-2">
-            <span className="text-xs font-mono uppercase text-[#64748b] block font-bold">2. What I Build</span>
+            <span className="text-xs font-mono uppercase text-[#64748b] block font-bold">2. What She Build</span>
             <ul className="space-y-1 text-xs sm:text-sm text-[#94a3b8]">
               <li className="flex items-start gap-2">
                 <span className="text-[#d4ff3a] font-bold">•</span>
-                <span><strong>AI Workflows & LLM Tools:</strong> Conversational compilers, n8n automation graphs, structured Zod schemas, Vercel AI SDK integration.</span>
+                <span><strong>AI Workflows & LLM Tools:</strong> Conversational compilers, n8n automation, structured Zod schemas, AI SDK integration.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-[#38bdf8] font-bold">•</span>
-                <span><strong>Modern Full-Stack Web Apps:</strong> React, Next.js, Node.js, Express, TypeScript, Tailwind CSS, high-FPS data visualizations.</span>
+                <span><strong>Modern Full-Stack Web Apps:</strong> React, Next.js, Node.js, TypeScript, Tailwind CSS, Supabase/Turso.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-[#a78bfa] font-bold">•</span>
-                <span><strong>Secure Persistence & APIs:</strong> PostgreSQL, Supabase, Turso (libSQL), Row-Level Security, role-based authorization.</span>
+                <span><strong>Personal Projects:</strong> Enjoying, learning and playing with new tools and ideas. </span>
               </li>
             </ul>
           </div>
 
           {/* 3. Education & Credentials */}
           <div className="space-y-2">
-            <span className="text-xs font-mono uppercase text-[#64748b] block font-bold">3. Educational Degrees Conferred</span>
+            <span className="text-xs font-mono uppercase text-[#64748b] block font-bold">3. Educational Degrees</span>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
               <div className="p-3 rounded-lg bg-[#141720] border border-[#252b3d]">
-                <div className="text-xs font-bold text-[#f1f5f9]">Licenciada en Informática</div>
+                <div className="text-xs font-bold text-[#f1f5f9]">Computer Science</div>
                 <div className="text-[11px] text-[#d4ff3a] font-mono">Universidad Siglo 21</div>
-                <div className="text-[10px] text-[#94a3b8] mt-1">Computer Science degree (Advanced Systems, Algorithms, Security)</div>
+                <div className="text-[10px] text-[#94a3b8] mt-1">(Licenciada en Informática)</div>
               </div>
               <div className="p-3 rounded-lg bg-[#141720] border border-[#252b3d]">
-                <div className="text-xs font-bold text-[#f1f5f9]">Analista de Sistemas</div>
+                <div className="text-xs font-bold text-[#f1f5f9]">Systems Analysis</div>
                 <div className="text-[11px] text-[#38bdf8] font-mono">Universidad Siglo 21</div>
-                <div className="text-[10px] text-[#94a3b8] mt-1">Systems Analysis (Business Process Flow, Architecture, QA)</div>
+                <div className="text-[10px] text-[#94a3b8] mt-1">(Analista de Sistemas)</div>
               </div>
             </div>
           </div>
 
           {/* 4. Three Flagship Projects */}
           <div className="space-y-2">
-            <span className="text-xs font-mono uppercase text-[#64748b] block font-bold">4. Key Projects to Evaluate</span>
+            <span className="text-xs font-mono uppercase text-[#64748b] block font-bold">4. Key Projects</span>
             <div className="space-y-2 pt-1">
               <button
                 onClick={() => {
@@ -162,10 +162,10 @@ export const RecruiterDrawer = ({
               >
                 <div>
                   <div className="text-xs font-bold text-[#f8fafc] group-hover:text-[#d4ff3a]">
-                    ASKA FLOW — AI Automation Compiler
+                    ASKA FLOW — AI n8n Automation Generator
                   </div>
                   <div className="text-[11px] text-[#94a3b8]">
-                    Natural language prompt to validated n8n node topologies. React, AI SDK, Supabase.
+                    Natural language prompt to obtain ready-to-execute workflows in n8n.
                   </div>
                 </div>
                 <ExternalLink className="w-4 h-4 text-[#94a3b8] group-hover:text-white" />
@@ -180,10 +180,10 @@ export const RecruiterDrawer = ({
               >
                 <div>
                   <div className="text-xs font-bold text-[#f8fafc] group-hover:text-[#ff6036]">
-                    THE ARCHIVE — Interactive Career Timeline
+                    THE ARCHIVE — Basketball Career Timeline
                   </div>
                   <div className="text-[11px] text-[#94a3b8]">
-                    D3/SVG vector basketball shot heatmaps & Turso edge database.
+                    Interactive archive of a professional basketball career.
                   </div>
                 </div>
                 <ExternalLink className="w-4 h-4 text-[#94a3b8] group-hover:text-white" />
@@ -191,17 +191,17 @@ export const RecruiterDrawer = ({
 
               <button
                 onClick={() => {
-                  onSelectProjectSlug('med-vault');
+                  onSelectProjectSlug('health-vault');
                   onClose();
                 }}
                 className="w-full text-left p-3 rounded-xl bg-[#141720] hover:bg-[#1a202d] border border-[#252b3d] flex items-center justify-between transition-colors group cursor-pointer"
               >
                 <div>
                   <div className="text-xs font-bold text-[#f8fafc] group-hover:text-[#38bdf8]">
-                    MED VAULT — Clinical Healthcare Platform
+                    MED VAULT — Healthcare Platform
                   </div>
                   <div className="text-[11px] text-[#94a3b8]">
-                    PostgreSQL RLS security, role access, and zero-knowledge patient masking.
+                    Centralized website to save and check medical reports, exams and analysis.
                   </div>
                 </div>
                 <ExternalLink className="w-4 h-4 text-[#94a3b8] group-hover:text-white" />
@@ -211,14 +211,14 @@ export const RecruiterDrawer = ({
 
           {/* 5. How to Contact */}
           <div className="space-y-3 pt-2">
-            <span className="text-xs font-mono uppercase text-[#64748b] block font-bold">5. Immediate Contact Channels</span>
+            <span className="text-xs font-mono uppercase text-[#64748b] block font-bold">5. Contact Channels</span>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
               <a
                 href={`mailto:${emailAddress}`}
                 className="p-3 rounded-xl bg-[#141720] hover:bg-[#1a202d] border border-[#252b3d] text-center flex flex-col items-center gap-1 group transition-colors"
               >
                 <Mail className="w-4 h-4 text-[#d4ff3a]" />
-                <span className="text-xs font-medium text-[#f1f5f9]">Email Directly</span>
+                <span className="text-xs font-medium text-[#f1f5f9]">Email</span>
                 <span className="text-[10px] text-[#94a3b8] truncate max-w-[130px]">{emailAddress}</span>
               </a>
 
@@ -230,7 +230,7 @@ export const RecruiterDrawer = ({
               >
                 <Linkedin className="w-4 h-4 text-[#38bdf8]" />
                 <span className="text-xs font-medium text-[#f1f5f9]">LinkedIn Profile</span>
-                <span className="text-[10px] text-[#94a3b8]">/in/milagrosmaza</span>
+                <span className="text-[10px] text-[#94a3b8]">/in/milagros-maza</span>
               </a>
 
               <a
@@ -241,7 +241,7 @@ export const RecruiterDrawer = ({
               >
                 <Github className="w-4 h-4 text-[#cbd5e1]" />
                 <span className="text-xs font-medium text-[#f1f5f9]">GitHub Repos</span>
-                <span className="text-[10px] text-[#94a3b8]">/milimaza</span>
+                <span className="text-[10px] text-[#94a3b8]">/MiliMaza</span>
               </a>
             </div>
           </div>

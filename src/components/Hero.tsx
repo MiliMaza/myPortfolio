@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
-import { ArrowDownRight, Sparkles, Terminal, ShieldCheck, Trophy, ArrowRight } from 'lucide-react';
+import { ArrowDownRight, Sparkles, Terminal, Trophy, GraduationCap } from 'lucide-react';
 import { playTactileSound } from '../utils/audio';
 
 interface HeroProps {
@@ -20,7 +20,6 @@ interface Node {
 export const Hero = ({ soundEnabled, onOpenRecruiterBrief }: HeroProps) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [interactiveMode, setInteractiveMode] = useState(false);
   const [pulseCount, setPulseCount] = useState(0);
 
   // Canvas interactive kinetic simulation
@@ -212,7 +211,7 @@ export const Hero = ({ soundEnabled, onOpenRecruiterBrief }: HeroProps) => {
   }, [soundEnabled]);
 
   return (
-    <section 
+    <section
       id="home"
       ref={containerRef}
       className="relative pt-28 sm:pt-36 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[92vh] flex flex-col justify-center"
@@ -224,32 +223,31 @@ export const Hero = ({ soundEnabled, onOpenRecruiterBrief }: HeroProps) => {
 
       <div className="max-w-6xl mx-auto w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          
+
           {/* Left Column: Core Narrative & Identification */}
           <div className="lg:col-span-7 space-y-6 text-left">
-            
+
             {/* Status & Unconventional Identity Badge */}
             <div className="inline-flex flex-wrap items-center gap-2 px-3 py-1.5 rounded-full bg-[#141720] border border-[#252b3d] text-xs">
               <span className="flex items-center gap-1.5 text-[#d4ff3a] font-mono">
                 <span className="w-2 h-2 rounded-full bg-[#d4ff3a] animate-ping" />
-                <span>AVAILABLE FOR ROLES</span>
+                <span className='pl-2'>AVAILABLE TO WORK</span>
               </span>
               <span className="text-[#475569]">/</span>
               <span className="text-[#94a3b8] font-mono">FULL-STACK & AI</span>
-              <span className="text-[#475569]">/</span>
-              <span className="text-[#cbd5e1] font-medium">CS GRADUATE</span>
             </div>
 
             {/* Main Headline */}
             <div className="space-y-3">
               <h1 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#f8fafc] tracking-tight leading-[1.08]">
-                Systems built with <br />
+                Systems built with<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d4ff3a] via-[#f1f5f9] to-[#ff6036]">
-                  tactical precision.
+                  precision.
                 </span>
               </h1>
               <p className="text-lg sm:text-xl text-[#94a3b8] font-sans leading-relaxed max-w-2xl">
-                I'm <strong className="text-[#f1f5f9] font-semibold">Mili</strong> (Milagros Maza) — a Full-Stack Developer with a degree in Computer Science and a background as a professional basketball athlete. I build autonomous AI workflows, resilient web architectures, and crisp interactive tools.
+                I'm <strong className="text-[#f1f5f9] font-semibold">Mili</strong> — a Full-Stack Developer with a degree in Computer Science and a background as a professional basketball player.
+                <br />I love finding efficient ways to solve complex problems, whether it's on the court or in the code.
               </p>
             </div>
 
@@ -257,11 +255,11 @@ export const Hero = ({ soundEnabled, onOpenRecruiterBrief }: HeroProps) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
               <div className="p-3.5 rounded-xl bg-[#0e1117] border border-[#1e2433] flex items-start gap-3">
                 <div className="p-2 rounded-lg bg-[#141720] border border-[#252b3d] text-[#d4ff3a] shrink-0">
-                  <ShieldCheck className="w-4 h-4" />
+                  <GraduationCap className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-xs font-semibold text-[#f1f5f9]">Licenciada en Informática</div>
-                  <div className="text-[11px] text-[#94a3b8] font-mono">Universidad Siglo 21 · Systems Analyst</div>
+                  <div className="text-xs font-semibold text-[#f1f5f9]">Computer Science Degree</div>
+                  <div className="text-[11px] text-[#94a3b8] font-mono">Universidad Siglo 21 - Argentina</div>
                 </div>
               </div>
 
@@ -270,8 +268,8 @@ export const Hero = ({ soundEnabled, onOpenRecruiterBrief }: HeroProps) => {
                   <Trophy className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-xs font-semibold text-[#f1f5f9]">Professional Floor General</div>
-                  <div className="text-[11px] text-[#94a3b8] font-mono">Years in Pro Leagues · High Composure</div>
+                  <div className="text-xs font-semibold text-[#f1f5f9]">Pro Basketball Player</div>
+                  <div className="text-[11px] text-[#94a3b8] font-mono">Trieste, Italy - A2</div>
                 </div>
               </div>
             </div>
@@ -294,18 +292,19 @@ export const Hero = ({ soundEnabled, onOpenRecruiterBrief }: HeroProps) => {
                 className="px-5 py-3 rounded-xl bg-[#141720] hover:bg-[#1a1f2c] border border-[#252b3d] hover:border-[#94a3b8] text-[#f1f5f9] font-medium text-sm transition-all flex items-center gap-2 cursor-pointer"
               >
                 <Sparkles className="w-4 h-4 text-[#d4ff3a]" />
-                <span>Recruiter 30-Sec Fast-Track</span>
+                <span>Recruiter 30-Sec Brief</span>
               </button>
             </div>
 
             {/* Quick Stack Bar */}
             <div className="pt-2 flex items-center gap-2 text-xs font-mono text-[#64748b] flex-wrap">
               <span className="text-[#94a3b8]">Primary Toolkit:</span>
+              <span className="px-2 py-0.5 rounded bg-[#141720] border border-[#252b3d] text-[#cbd5e1]">JavaScript</span>
               <span className="px-2 py-0.5 rounded bg-[#141720] border border-[#252b3d] text-[#cbd5e1]">TypeScript</span>
-              <span className="px-2 py-0.5 rounded bg-[#141720] border border-[#252b3d] text-[#cbd5e1]">React & Next.js</span>
+              <span className="px-2 py-0.5 rounded bg-[#141720] border border-[#252b3d] text-[#cbd5e1]">React</span>
+              <span className="px-2 py-0.5 rounded bg-[#141720] border border-[#252b3d] text-[#cbd5e1]">Next.js</span>
+              <span className="px-2 py-0.5 rounded bg-[#141720] border border-[#252b3d] text-[#cbd5e1]">HTML + CSS</span>
               <span className="px-2 py-0.5 rounded bg-[#141720] border border-[#252b3d] text-[#cbd5e1]">Node.js</span>
-              <span className="px-2 py-0.5 rounded bg-[#141720] border border-[#252b3d] text-[#d4ff3a]">n8n & AI SDK</span>
-              <span className="px-2 py-0.5 rounded bg-[#141720] border border-[#252b3d] text-[#cbd5e1]">PostgreSQL</span>
             </div>
 
           </div>
@@ -313,7 +312,7 @@ export const Hero = ({ soundEnabled, onOpenRecruiterBrief }: HeroProps) => {
           {/* Right Column: Digital Playground Kinetic Simulation Canvas */}
           <div className="lg:col-span-5">
             <div className="relative rounded-2xl bg-[#0e1117] border border-[#1e2433] p-1 shadow-2xl overflow-hidden group">
-              
+
               {/* Canvas Header Controls */}
               <div className="flex items-center justify-between px-3.5 py-2.5 bg-[#141720] rounded-t-xl border-b border-[#1e2433] text-xs">
                 <div className="flex items-center gap-2">
@@ -323,7 +322,7 @@ export const Hero = ({ soundEnabled, onOpenRecruiterBrief }: HeroProps) => {
                     <span className="w-2.5 h-2.5 rounded-full bg-[#10b981]/80" />
                   </div>
                   <span className="text-[#94a3b8] font-mono text-[11px] pl-2">
-                    playground://kinetic-node-field
+                    playground://
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -334,28 +333,23 @@ export const Hero = ({ soundEnabled, onOpenRecruiterBrief }: HeroProps) => {
                 </div>
               </div>
 
-              {/* The Interactive Canvas */}
+              {/* Interactive Canvas */}
               <div className="relative w-full h-[320px] sm:h-[380px] bg-[#090b10] cursor-crosshair overflow-hidden">
                 <canvas
                   ref={canvasRef}
                   className="w-full h-full block"
                 />
 
-                {/* Overlaid Micro-HUD telemetry */}
                 <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono pointer-events-none">
                   <div className="px-2.5 py-1 rounded-md bg-[#141720]/90 backdrop-blur-sm border border-[#252b3d] text-[#94a3b8] flex items-center gap-2">
                     <Terminal className="w-3 h-3 text-[#d4ff3a]" />
-                    <span>Hover / click to warp topology</span>
-                  </div>
-                  <div className="hidden sm:block px-2.5 py-1 rounded-md bg-[#141720]/90 backdrop-blur-sm border border-[#252b3d] text-[#cbd5e1]">
-                    <span className="text-[#ff6036]">Court Vision</span> × <span className="text-[#d4ff3a]">Systems Flow</span>
+                    <span>Hover/click to warp</span>
                   </div>
                 </div>
               </div>
 
-              {/* Canvas Bottom Insight */}
               <div className="p-3 bg-[#0e1117] border-t border-[#1e2433] flex items-center justify-between text-xs text-[#94a3b8]">
-                <span className="italic">"The game floor and the software stack: both reward reading three steps ahead."</span>
+                <span className="italic">"A different point of view."</span>
                 <span className="font-mono text-[10px] text-[#64748b]">mili.dev</span>
               </div>
             </div>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { BrandMark } from './BrandMark';
-import { ArrowUp, Heart, Sparkles } from 'lucide-react';
+import { ArrowUp, Sparkles } from 'lucide-react';
 import { playTactileSound } from '../utils/audio';
 
 interface FooterProps {
@@ -13,10 +13,10 @@ export const Footer = ({ soundEnabled }: FooterProps) => {
 
   useEffect(() => {
     const updateTime = () => {
-      // Argentina / UTC-3 local time string
+      // Italy / UTC+2 local time string
       try {
         const timeStr = new Intl.DateTimeFormat('en-US', {
-          timeZone: 'America/Argentina/Cordoba',
+          timeZone: 'Europe/Rome',
           hour: '2-digit',
           minute: '2-digit',
           second: '2-digit',
@@ -45,7 +45,7 @@ export const Footer = ({ soundEnabled }: FooterProps) => {
   return (
     <footer className="mt-20 border-t border-[#1a1f2c] bg-[#07080c] py-12 px-4 sm:px-6 lg:px-8 text-xs font-mono text-[#64748b] text-left">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
-        
+
         {/* Left: Brand Identity & Copyright */}
         <div className="flex items-center gap-3">
           <BrandMark size={28} />
@@ -55,16 +55,16 @@ export const Footer = ({ soundEnabled }: FooterProps) => {
               <span className="text-[#64748b] font-normal">/ Milagros Maza</span>
             </div>
             <div className="text-[11px] text-[#94a3b8] mt-0.5">
-              Computer Science · Professional Athletics · Full-Stack & AI Systems
+              Computer Science · Professional Athlete · Full-Stack & AI
             </div>
           </div>
         </div>
 
-        {/* Center: Live Timezone & Easter Egg Interaction */}
+        {/* Center: Live Timezone & Counter Interaction */}
         <div className="flex items-center gap-4 flex-wrap justify-center">
           <div className="px-2.5 py-1 rounded-md bg-[#0e1117] border border-[#1e2433] text-[#94a3b8] flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#d4ff3a] animate-pulse" />
-            <span>AR (UTC-3): {localTime || 'LIVE'}</span>
+            <span>IT (UTC+2): {localTime || 'LIVE'}</span>
           </div>
 
           <button

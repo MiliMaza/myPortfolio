@@ -5,100 +5,99 @@ export const projectsData: Project[] = [
     id: 'aska-flow',
     slug: 'aska-flow',
     title: 'ASKA FLOW',
-    tagline: 'Natural-language AI platform for designing, compiling, and deploying n8n automation workflows.',
+    tagline: 'Natural-language AI platform that generates n8n automation workflows from user instructions.',
     category: 'AI / LLM & Automation',
-    year: '2024 — Present',
-    status: 'Active Development',
+    year: '2025 — 2026',
+    status: 'Complete',
     featured: true,
-    accentColor: '#d4ff3a', // Kinetic Signal Lime
+    accentColor: '#d4ff3a',
     secondaryColor: '#10b981',
     technologies: [
       'Next.js',
       'React',
       'TypeScript',
-      'Vercel AI SDK',
-      'OpenAI / Gemini',
-      'n8n Webhooks',
-      'REST APIs',
       'Tailwind CSS',
+      'Vercel AI SDK',
       'Prompt Engineering',
-      'Supabase'
+      'OpenAI',
+      'n8n',
+      'REST APIs',
+      'Turso',
+      'Clerk'
     ],
     summary: 'ASKA FLOW bridges high-level human operational intent with robust automated execution. Instead of manually linking dozens of API nodes in n8n, users prompt in natural language to synthesize, validate, and launch live event-driven workflows.',
-    problem: 'Building enterprise or personal automation workflows in n8n requires deep knowledge of JSON payloads, webhook structures, and conditional branching logic. For non-technical operators or fast-moving founders, the learning curve slows down pipeline creation.',
-    solution: 'Engineered a specialized conversational compiler that converts operational descriptions into validated n8n node DAG (directed acyclic graph) schemas, automatically configuring credentials, error fallbacks, and webhook endpoints with one-click deployment.',
+    problem: 'Building automation workflows in n8n requires deep technical knowledge and algorithmic thinking. For non-technical operators or fast-moving founders, the learning curve slows down pipeline creation.',
+    solution: 'Developed a specialized conversational chat that converts users descriptions into validated n8n schemas, configuring credentials, error fallbacks, and webhook endpoints with one-click deployment.',
     architecture: [
-      'Frontend interactive DAG visualizer built with React and custom canvas node connectors.',
-      'Server-side LLM orchestration utilizing Vercel AI SDK with strictly enforced Zod schema outputs.',
-      'Direct synchronization with n8n instance via REST API and webhook lifecycle managers.',
-      'Supabase database for user workspace state, workflow templates, and run logs.'
+      'Frontend easy-interactive chat interface.',
+      'Server-side LLM orchestration.',
+      'Validation-first before showing the response to the user.',
+      'Direct synchronization with n8n user instance.',
+      'Database persistency for iterative prompts and workflow improvements.'
     ],
     features: [
       {
-        title: 'Intent-to-Workflow Synthesis',
-        description: 'Translates conversational prompts like "When a Stripe refund occurs, alert Slack and flag in Postgres" into valid n8n node topologies.'
+        title: 'Natural Language Processing (NLP)',
+        description: 'Translates conversational prompts like "When a Stripe refund occurs, alert me through Slack" into valid n8n node topologies.'
       },
       {
-        title: 'Live Node Canvas & Inspector',
-        description: 'Interactive visual graph preview allowing manual tweaking of triggers, filters, and HTTP payload mappers.'
+        title: 'Schema & Security Validation',
+        description: 'Own validation system before showing the response to the user, ensuring that the workflow is valid and secure.'
       },
       {
-        title: 'Schema Validation & Self-Correction',
-        description: 'Automated linter runs against n8n node specification to ensure parameter completeness before execution.'
+        title: 'One-Click Deployment',
+        description: 'Execute workflows directly to self-hosted n8n instances without the user leaving the website.'
       },
       {
-        title: 'One-Click Webhook Provisioning',
-        description: 'Deploys workflows directly to self-hosted or cloud n8n instances with live health check listeners.'
+        title: 'Persistency and Iterative Improvement',
+        description: 'Allows users to iterate on previous generated workflows, improving them and achieving better results over time.'
       }
     ],
     technicalDecisions: [
       {
         title: 'Structured Output via Zod Schema vs Raw Prompting',
-        reason: 'Raw LLM output introduces syntax anomalies in n8n JSON configs. Enforcing strict Zod structured outputs eliminated 99% of invalid connection schemas.'
+        reason: 'Raw LLM output introduces syntax anomalies in n8n JSON configs. Enforcing strict Zod structured outputs eliminated most of invalid connection schemas.'
       },
       {
-        title: 'Decoupled Visual Canvas from Execution Engine',
-        reason: 'Allowed rapid iterative prototyping on the UI canvas without hammering the backend n8n instance on every parameter change.'
+        title: 'Non-Stream vs Streaming Responses',
+        reason: 'Even though streaming responses are better for UX, the configuration schema is complex and requires waiting for the complete and validated response to ensure system stability.'
       }
     ],
     challenges: [
-      'Handling nested cyclic dependencies in complex automation logic without crashing the workflow generator.',
-      'Mapping heterogeneous API authentication requirements into uniform n8n credential blocks safely.'
+      'Obtaining consistent quality outputs from the LLM and guiding it to generate valid and secure n8n JSON schemas.',
+      'Connecting and syncing directly to user n8n instance using the n8n API REST and avoiding user authentication issues.'
     ],
     learnings: [
       'Prompt engineering is fundamentally a systems specification problem, requiring rigorous edge-case guarding.',
-      'Developer velocity jumps dramatically when visual tooling provides immediate runtime feedback on generated schemas.'
+      'AI systems are vulnerable to prompt injection attacks, which requires robust validation and sanitization of user inputs.'
     ],
     links: {
-      github: 'https://github.com/milimaza/aska-flow',
-      live: 'https://aska-flow.mili.dev',
-      demoNote: 'Live preview available with sample sandbox workflows.'
+      github: 'https://github.com/milimaza/aska_flow',
+      live: 'https://aska-flow.vercel.app',
+      demoNote: 'Ask for your first workflow :D'
     },
     metrics: [
-      { label: 'Workflow Gen Time', value: '< 2.4s' },
+      { label: 'Workflow Gen Time', value: '< 1 min' },
       { label: 'Supported Nodes', value: '45+' },
-      { label: 'Schema Accuracy', value: '98.5%' }
+      { label: 'Cost of MVP', value: 'Free' }
     ]
   },
   {
     id: 'the-archive',
     slug: 'the-archive',
     title: 'THE ARCHIVE',
-    tagline: 'Interactive spatial timeline & visual data analytics celebrating a professional basketball journey.',
-    category: 'Data Visualization & Interactive Storytelling',
-    year: '2024',
-    status: 'Production',
+    tagline: 'Interactive timeline & visual data analytics for your professional basketball journey.',
+    category: 'Fullstack & Data Management',
+    year: '2026',
+    status: 'Complete',
     featured: true,
-    accentColor: '#ff6036', // Court Electric Orange
+    accentColor: '#ff6036',
     secondaryColor: '#f59e0b',
     technologies: [
       'React',
       'TypeScript',
       'Tailwind CSS',
-      'D3.js / SVG Canvas',
-      'Motion',
-      'PostgreSQL',
-      'Turso'
+      'Supabase'
     ],
     summary: 'A bespoke digital exhibition combining years of professional basketball competition with modern frontend engineering. Features an interactive court heatmap, shot charts, career milestones, and match-by-match tactical analytics.',
     problem: 'Traditional sports portfolios are static, image-heavy, and lack depth. They fail to convey the analytical intelligence, spatial awareness, and strategic discipline that elite athletes bring to software engineering teams.',
@@ -142,36 +141,32 @@ export const projectsData: Project[] = [
       'The tactile feel of responsive data visualizations directly impacts user dwell time.'
     ],
     links: {
-      github: 'https://github.com/milimaza/the-archive',
-      live: 'https://archive.mili.dev',
-      demoNote: 'Explore the full interactive career dataset and shot matrix.'
+      github: 'https://github.com/milimaza/theArchive',
+      live: 'https://the-archive-mm.vercel.app/',
+      demoNote: 'Connect your own database to see your custom analytics'
     },
     metrics: [
       { label: 'Matches Logged', value: '180+' },
-      { label: 'Tactical Sets Analyzed', value: '40+' },
-      { label: 'Render Latency', value: '60 FPS' }
+      { label: 'Modes', value: 'Light/Dark' },
+      { label: 'Cost', value: 'Free' }
     ]
   },
   {
-    id: 'med-vault',
-    slug: 'med-vault',
-    title: 'MED VAULT',
-    tagline: 'Privacy-first medical web application for clinical record organization, patient telemetry, and access auditing.',
-    category: 'Full-Stack Web & Healthcare UX',
-    year: '2023 — 2024',
+    id: 'health-vault',
+    slug: 'health-vault',
+    title: 'HEALTH VAULT',
+    tagline: 'Medical web application for clinical record organization, health tracking, and file management.',
+    category: 'Fullstack & Healthcare',
+    year: '2026',
     status: 'Complete',
     featured: true,
-    accentColor: '#38bdf8', // Cyber Cyan
+    accentColor: '#38bdf8',
     secondaryColor: '#6366f1',
     technologies: [
       'React',
       'TypeScript',
       'Node.js',
-      'PostgreSQL',
-      'REST APIs',
-      'Tailwind CSS',
-      'RBAC Auth',
-      'Client-Side Encryption'
+      'Supabase'
     ],
     summary: 'A resilient clinical data management platform built to simplify high-stakes patient tracking. Delivers granular role-based access control, cryptographic field masking, and an ergonomic interface crafted for fast clinical workflows under stress.',
     problem: 'Healthcare software is notorious for clunky UI, overwhelming cognitive load, and risky security models that frustrate practitioners and slow down urgent patient triage.',
@@ -215,23 +210,23 @@ export const projectsData: Project[] = [
       'Security architectures must be designed with developer ergonomics in mind to prevent accidental security bypasses.'
     ],
     links: {
-      github: 'https://github.com/milimaza/med-vault',
-      live: 'https://medvault.mili.dev',
-      demoNote: 'Interactive sandbox loaded with anonymized synthetic clinical records.'
+      github: 'https://github.com/milimaza/health-vault',
+      live: 'https://health-vault.vercel.app',
+      demoNote: 'Register and try it out!'
     },
     metrics: [
-      { label: 'Role Latency', value: '< 15ms' },
-      { label: 'WCAG Compliance', value: 'AA / AAA' },
-      { label: 'Security Model', value: 'RBAC + RLS' }
+      { label: 'Response Time', value: '< 200ms' },
+      { label: 'Supported', value: '+6 File Types' },
+      { label: 'Privacy', value: 'Very high' }
     ]
   },
   {
     id: 'mili-dev',
     slug: 'mili-dev',
-    title: 'MILI.DEV (PLAYGROUND)',
-    tagline: 'The portfolio as a living digital experiment: kinetic physics, custom typography, and high-signal recruiter HUD.',
-    category: 'Creative Frontend & Design System',
-    year: '2025',
+    title: 'MILI.DEV',
+    tagline: 'The portfolio as a digital living experience: kinetic physics, custom typography, and high-level data visualization.',
+    category: 'Creative Frontend',
+    year: '2026',
     status: 'Live Concept',
     featured: false,
     accentColor: '#e0e7ff',
@@ -246,16 +241,15 @@ export const projectsData: Project[] = [
     ],
     summary: 'A deliberate rejection of generic portfolio templates. Built as an interactive digital playground that merges athletic precision with creative web engineering, featuring keyboard navigation, recruiter fast-paths, and custom micro-interactions.',
     problem: 'Standard developer portfolios look like identical cloned templates with generic card grids, glowing purple blobs, and zero personality.',
-    solution: 'Designed an art-directed, dark-first interactive experience with a bespoke geometric visual identity, kinetic node graph, instant Recruiter Brief drawer, and filterable interactive skill matrix.',
+    solution: 'Designed an art-directed, dark-first interactive experience with a geometric visual identity, kinetic node graph, instant Recruiter Brief drawer, and filterable interactive skill matrix.',
     architecture: [
       'Modern React 19 architecture with fine-grained modular components and zero unnecessary backend overhead.',
       'Custom dynamic canvas physics engine reacting to cursor trajectory and velocity.',
       'Deep URL state synchronization supporting direct linking to project case studies.',
-      'Sub-100kb initial script footprint with optimized zero-CLS typography loading.'
     ],
     features: [
       {
-        title: 'Recruiter Fast-Track HUD',
+        title: 'Recruiter Fast-Track',
         description: 'Single-click high-signal summary answering the 7 core hiring questions in under 30 seconds.'
       },
       {
@@ -277,11 +271,12 @@ export const projectsData: Project[] = [
       'Maintaining 100% WCAG accessibility and keyboard usability while pushing creative interaction boundaries.'
     ],
     learnings: [
-      'The best portfolio is not a list of past work—it is proof of craftsmanship in the present moment.'
+      'The best portfolio is not a list of past work, it is a reflection of your current abilities as a developer.'
     ],
     links: {
-      github: 'https://github.com/milimaza/mili-dev',
-      live: 'https://mili.dev'
+      github: 'https://github.com/milimaza/myPortfolio',
+      live: 'https://mili-dev.vercel.app',
+      demoNote: 'You are currently experiencing it!'
     }
   }
 ];

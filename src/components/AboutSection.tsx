@@ -1,5 +1,5 @@
 import { dualPerspectivePrinciples } from '../data/experience';
-import { Eye, Clock, Repeat, ShieldCheck, Compass, Terminal } from 'lucide-react';
+import { Eye, Clock, Repeat } from 'lucide-react';
 import { playTactileSound } from '../utils/audio';
 
 interface AboutSectionProps {
@@ -32,37 +32,26 @@ export const AboutSection = ({ soundEnabled }: AboutSectionProps) => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
+
         {/* Left Column: Authentic Human Narrative */}
         <div className="lg:col-span-6 space-y-6 text-[#94a3b8] leading-relaxed text-base font-sans">
-          <div className="p-6 rounded-2xl bg-[#0e1117] border border-[#1e2433] space-y-4">
+          <div className="p-6 rounded-2xl bg-[#0e1117] border border-[#1e2433] space-y-7">
             <h3 className="font-display font-bold text-xl text-[#f1f5f9]">
               The unusual convergence
             </h3>
             <p>
-              My background is not linear. I earned both my <strong className="text-[#f1f5f9]">Analista de Sistemas</strong> degree and my bachelor's degree in Computer Science (<strong className="text-[#f1f5f9]">Licenciada en Informática</strong>) from Universidad Siglo 21 while competing year-round as a point guard in professional basketball leagues.
+              My background is not linear. I earned both my <strong className="text-[#f1f5f9]">Systems Analyst</strong> degree and my bachelor's degree in <strong className="text-[#f1f5f9]">Computer Science</strong> from 'Universidad Siglo 21' while competing year-round as a professional basketball player.
             </p>
             <p>
               Living in both worlds meant mastering two demanding disciplines simultaneously. On the hardwood, success demands split-second spatial reasoning, total tactical awareness, and relentless composure when the clock runs down. In computer science, it demands abstract modeling, algorithmic clarity, and architectural resilience.
             </p>
             <p>
-              When I transitioned full focus into software engineering and AI automation, these two worlds merged seamlessly. Software isn’t just lines in a file; it’s an active system where latency, state transitions, and user friction have to be read like a fast-break defense.
+              When I started to focus on software engineering and AI automation, these two worlds merged seamlessly. Software isn’t just lines in a file; it’s an active system where performance, state transitions, and user friction have to be read like a fast-break defense.
             </p>
-          </div>
-
-          {/* Core Focus Now */}
-          <div className="p-5 rounded-2xl bg-[#090b10] border border-[#1a1f2c] flex items-center justify-between gap-4">
-            <div className="space-y-1">
-              <span className="text-xs font-mono uppercase text-[#64748b]">Current Engineering Focus</span>
-              <div className="text-sm font-semibold text-[#e2e8f0]">
-                Agentic workflows, n8n orchestration, full-stack React/Next.js, & secure relational data
-              </div>
-            </div>
-            <Terminal className="w-5 h-5 text-[#d4ff3a] shrink-0" />
           </div>
         </div>
 
-        {/* Right Column: Tactical Principles (Athletics → Software) */}
+        {/* Right Column: Tactical Principles */}
         <div className="lg:col-span-6 space-y-4">
           <div className="text-xs font-mono uppercase text-[#64748b] tracking-wider mb-2">
             Tactical Translations: Court to Codebase
